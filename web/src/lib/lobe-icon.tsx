@@ -54,6 +54,14 @@ const CUSTOM_ICONS: Record<string, ComponentType<{ size?: number }>> = {
 }
 
 const ICON_METADATA = new Map(toc.map((icon) => [icon.id, icon]))
+// 从图标目录解析配置名称，兼容小写名称并保留按需加载。
+const ICON_NAMES_BY_LOWERCASE = new Map<string, string>()
+for (const name of [...Object.keys(CUSTOM_ICONS), ...ICON_METADATA.keys()]) {
+  const normalizedName = name.toLowerCase()
+  if (!ICON_NAMES_BY_LOWERCASE.has(normalizedName)) {
+    ICON_NAMES_BY_LOWERCASE.set(normalizedName, name)
+  }
+}
 const ICON_VARIANTS = {
   Avatar: 'hasAvatar',
   Brand: 'hasBrand',
@@ -137,8 +145,11 @@ export function getLobeIcon(
   if (!trimmedName) return fallback
 
   const segments = trimmedName.split('.')
-  const baseKey = segments[0]
-  const CustomIcon = CUSTOM_ICONS[baseKey]
+  const baseKey =
+    ICON_NAMES_BY_LOWERCASE.get(segments[0].toLowerCase()) ?? segments[0]
+  const CustomIcon = Object.hasOwn(CUSTOM_ICONS, baseKey)
+    ? CUSTOM_ICONS[baseKey]
+    : undefined
   if (CustomIcon) return <CustomIcon size={size} />
 
   const metadata = ICON_METADATA.get(baseKey)
