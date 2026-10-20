@@ -239,12 +239,12 @@ export function SubscriptionPlansCard({
   if (loading) {
     return (
       <Card data-card-hover='false' className='gap-0 overflow-hidden py-0'>
-        <CardHeader className='border-b p-3 !pb-3 sm:p-5 sm:!pb-5'>
+        <CardHeader className='border-b p-4 !pb-4 sm:p-6 sm:!pb-6'>
           <Skeleton className='h-6 w-32' />
         </CardHeader>
-        <CardContent className='space-y-4 p-3 sm:p-5'>
+        <CardContent className='space-y-5 p-4 sm:p-6'>
           <Skeleton className='h-20 w-full' />
-          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
+          <div className='grid grid-cols-1 gap-4'>
             {['first', 'second', 'third'].map((key) => (
               <Skeleton key={key} className='h-48 w-full' />
             ))}
@@ -266,7 +266,9 @@ export function SubscriptionPlansCard({
         icon={<Crown className='h-4 w-4' />}
         iconTone='warning'
         disableHoverEffect
-        contentClassName='space-y-4 sm:space-y-5'
+        className='border-border/80 shadow-sm'
+        headerClassName='bg-muted/20 p-4 !pb-4 sm:p-6 sm:!pb-6'
+        contentClassName='space-y-5 p-4 sm:space-y-6 sm:p-6'
       >
         {/* My subscriptions & billing preference */}
         <div className='rounded-xl border p-3 sm:p-4'>
@@ -524,7 +526,7 @@ export function SubscriptionPlansCard({
 
         {/* Available plans grid */}
         {plans.length > 0 ? (
-          <div className='grid grid-cols-1 gap-3 2xl:grid-cols-2 2xl:gap-4'>
+          <div className='grid grid-cols-1 gap-4'>
             {plans.map((p, index) => {
               const plan = p?.plan
               if (!plan) return null

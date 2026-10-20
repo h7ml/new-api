@@ -146,16 +146,16 @@ export function RechargeFormCard({
   if (loading) {
     return (
       <Card data-card-hover='false' className='gap-0 overflow-hidden py-0'>
-        <CardHeader className='border-b p-3 !pb-3 sm:p-5 sm:!pb-5'>
+        <CardHeader className='border-b p-4 !pb-4 sm:p-6 sm:!pb-6'>
           <Skeleton className='h-6 w-32' />
           <Skeleton className='mt-2 h-4 w-48' />
         </CardHeader>
-        <CardContent className='space-y-4 p-3 sm:space-y-6 sm:p-5'>
+        <CardContent className='space-y-5 p-4 sm:space-y-6 sm:p-6'>
           <div className='space-y-4 sm:space-y-6'>
             {/* Preset Amounts Skeleton */}
             <div className='space-y-3'>
               <Skeleton className='h-3 w-16' />
-              <div className='grid grid-cols-2 gap-3 sm:grid-cols-4'>
+              <div className='grid grid-cols-2 gap-3 sm:grid-cols-3'>
                 {Array.from({ length: 8 }, (_, index) => `preset-${index}`).map(
                   (key) => (
                     <Skeleton key={key} className='h-[72px] rounded-lg' />
@@ -201,6 +201,9 @@ export function RechargeFormCard({
       icon={<WalletCards className='h-4 w-4' />}
       iconTone='success'
       disableHoverEffect
+      className='border-primary/20 shadow-sm'
+      headerClassName='bg-muted/20 p-4 !pb-4 sm:p-6 sm:!pb-6'
+      contentClassName='space-y-5 p-4 sm:space-y-6 sm:p-6'
       action={
         onOpenBilling ? (
           <Button
@@ -214,7 +217,6 @@ export function RechargeFormCard({
           </Button>
         ) : null
       }
-      contentClassName='space-y-4 sm:space-y-6'
     >
       {/* Online Topup Section */}
       {hasAnyTopup ? (
@@ -226,7 +228,7 @@ export function RechargeFormCard({
                   <Label className='text-muted-foreground text-xs font-medium tracking-wider uppercase'>
                     {t('Amount')}
                   </Label>
-                  <div className='grid grid-cols-2 gap-1.5 sm:gap-3 md:grid-cols-4'>
+                  <div className='grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3'>
                     {presetAmounts.map((preset) => {
                       const discount =
                         preset.discount ||
@@ -248,11 +250,12 @@ export function RechargeFormCard({
                           key={preset.value}
                           variant='outline'
                           className={cn(
-                            'flex min-h-16 flex-col items-start rounded-lg px-3 py-2.5 text-left whitespace-normal sm:min-h-[72px] sm:p-4',
+                            'flex min-h-16 flex-col items-start rounded-lg px-3 py-2.5 text-left whitespace-normal transition-colors sm:min-h-[72px] sm:p-4',
                             selectedPreset === preset.value
-                              ? 'border-foreground bg-foreground/5 dark:border-foreground dark:bg-foreground/10'
-                              : 'border-muted'
+                              ? 'border-primary bg-primary/[0.06] ring-2 ring-primary/15 dark:border-primary dark:bg-primary/[0.12]'
+                              : 'border-muted hover:border-primary/45 hover:bg-muted/30 dark:border-muted dark:hover:border-primary/45 dark:hover:bg-muted/30'
                           )}
+                          aria-pressed={selectedPreset === preset.value}
                           onClick={() => onSelectPreset(preset)}
                         >
                           <div className='flex w-full items-center justify-between'>
@@ -298,7 +301,7 @@ export function RechargeFormCard({
                 >
                   {t('Custom Amount')}
                 </Label>
-                <div className='grid grid-cols-[minmax(0,1fr)_minmax(110px,0.55fr)] gap-2 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center'>
+                <div className='grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:items-center'>
                   <Input
                     id='topup-amount'
                     type='number'
@@ -308,7 +311,7 @@ export function RechargeFormCard({
                     placeholder={t('Minimum {{amount}}', { amount: minTopup })}
                     className='h-9 text-base sm:h-10 sm:text-lg'
                   />
-                  <div className='bg-muted/30 flex min-h-9 items-center justify-between gap-2 rounded-md border px-3 lg:min-w-52'>
+                  <div className='bg-muted/30 flex min-h-10 min-w-0 items-center justify-between gap-2 rounded-md border px-3'>
                     <span className='text-muted-foreground truncate text-xs'>
                       {t('Amount to pay:')}
                     </span>
