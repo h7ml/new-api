@@ -244,7 +244,7 @@ export function SubscriptionPlansCard({
         </CardHeader>
         <CardContent className='space-y-5 p-4 sm:p-6'>
           <Skeleton className='h-20 w-full' />
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
             {['first', 'second', 'third'].map((key) => (
               <Skeleton key={key} className='h-48 w-full' />
             ))}
@@ -526,7 +526,7 @@ export function SubscriptionPlansCard({
 
         {/* Available plans grid */}
         {plans.length > 0 ? (
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
             {plans.map((p, index) => {
               const plan = p?.plan
               if (!plan) return null

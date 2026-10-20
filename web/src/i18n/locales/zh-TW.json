@@ -289,6 +289,7 @@
     "Add FAQ": "新增問答",
     "Add from available models...": "從可用模型中新增...",
     "Add Funds": "增加資金",
+    "Balance Top-up": "餘額儲值",
     "Add group": "新增分組",
     "Administrator completed the order, amount added: {{quota}}, payment amount: {{amount}}": "管理員補單成功，儲值額度：{{quota}}，支付金額：{{amount}}",
     "Administrator reset the quota of subscription plan {{plan_title}} (ID: {{plan_id}})": "管理員重設訂閱方案 {{plan_title}}（ID: {{plan_id}}）額度",

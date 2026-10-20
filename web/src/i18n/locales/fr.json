@@ -289,6 +289,7 @@
     "Add FAQ": "Ajouter une FAQ",
     "Add from available models...": "Ajouter à partir des modèles disponibles...",
     "Add Funds": "Ajouter des fonds",
+    "Balance Top-up": "Rechargement du solde",
     "Add group": "Ajouter un groupe",
     "Administrator completed the order, amount added: {{quota}}, payment amount: {{amount}}": "Commande complétée par l'administrateur, montant ajouté : {{quota}}, montant payé : {{amount}}",
     "Administrator reset the quota of subscription plan {{plan_title}} (ID: {{plan_id}})": "L'administrateur a réinitialisé le quota de l'offre d'abonnement {{plan_title}} (ID : {{plan_id}})",

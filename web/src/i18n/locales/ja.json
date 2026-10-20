@@ -289,6 +289,7 @@
     "Add FAQ": "FAQ追加",
     "Add from available models...": "利用可能なモデルから追加...",
     "Add Funds": "残高チャージ",
+    "Balance Top-up": "残高チャージ",
     "Add group": "グループを追加",
     "Administrator completed the order, amount added: {{quota}}, payment amount: {{amount}}": "管理者が注文を完了しました。追加額：{{quota}}、支払額：{{amount}}",
     "Administrator reset the quota of subscription plan {{plan_title}} (ID: {{plan_id}})": "管理者がサブスクリプションプラン {{plan_title}}（ID: {{plan_id}}）のクォータをリセットしました",

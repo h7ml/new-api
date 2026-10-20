@@ -289,6 +289,7 @@
     "Add FAQ": "Thêm FAQ",
     "Add from available models...": "Thêm từ các mô hình có sẵn...",
     "Add Funds": "Thêm Tiền",
+    "Balance Top-up": "Nạp số dư",
     "Add group": "Thêm nhóm",
     "Administrator completed the order, amount added: {{quota}}, payment amount: {{amount}}": "Quản trị viên đã hoàn tất đơn hàng, số tiền đã nạp: {{quota}}, số tiền thanh toán: {{amount}}",
     "Administrator reset the quota of subscription plan {{plan_title}} (ID: {{plan_id}})": "Quản trị viên đã đặt lại hạn mức của gói đăng ký {{plan_title}} (ID: {{plan_id}})",

@@ -289,6 +289,7 @@
     "Add FAQ": "Add FAQ",
     "Add from available models...": "Add from available models...",
     "Add Funds": "Add Funds",
+    "Balance Top-up": "Balance Top-up",
     "Add group": "Add group",
     "Administrator completed the order, amount added: {{quota}}, payment amount: {{amount}}": "Administrator completed the order, amount added: {{quota}}, payment amount: {{amount}}",
     "Administrator reset the quota of subscription plan {{plan_title}} (ID: {{plan_id}})": "Administrator reset the quota of subscription plan {{plan_title}} (ID: {{plan_id}})",
